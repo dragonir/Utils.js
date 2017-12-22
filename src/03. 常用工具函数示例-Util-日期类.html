@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>日期类</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="./browser.min.js"></script>
+	<script type="text/javascript" src="./Util.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	
+	// ISODateString
+	var date = new Date();	
+	console.log(date);	
+	// Sat Dec 16 2017 21:06:44 GMT+0800 (中国标准时间)
+	console.log(Util.ISODateString(date));
+	// 2017-12-16T13:06:44Z
+
+
+	// getDayDiffBetweenDates
+	console.log(Util.getDayDiffBetweenDates(new Date("2017-12-13"), new Date("2017-12-22")));
+	// 9
+
+
+	// JSONToDate
+	console.log(Util.JSONToDate(/Date(1489525200000)/));
+	// 15/3/2017
+
+
+	// toEnglishDate
+	console.log(Util.toEnglishDate("12/21/2017"));
+	// 2017/12/20
+	
+</script>
+</body>
+</html>

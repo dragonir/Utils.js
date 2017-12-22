@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RegExp测试</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="./RegExp.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+
+	// 匹配正整数
+	console.log(RegExp.isPositiveNum(9));	// true
+	console.log(RegExp.isPositiveNum(-5));	// false
+
+	// 匹配负整数
+	console.log(RegExp.isNegativeNum(9));	//false
+	console.log(RegExp.isNegativeNum(-5));	// true
+
+	// 匹配整数
+	console.log(RegExp.isInteger(12.4));	// true
+	console.log(RegExp.isInteger(10));		// false
+
+
+	//匹配由 26 个英文字母组成的字符串
+	console.log(RegExp.isAZaz("hello"));	// true
+	console.log(RegExp.isAZaz("hello2"));	// false
+
+	//匹配由 26 个英文字母的大写组成的字符串
+	console.log(RegExp.isAZ("HELLO"));		// true
+	console.log(RegExp.isAZ("Hello"));		// false
+
+
+	// 匹配电子邮件地址
+	console.log(RegExp.isEmailAddress("x@sina.com")
+		// true
+	console.log(RegExp.isEmailAddress("w@a.cn"));
+		// true
+	console.log(RegExp.isEmailAddress("www.a.com"));
+		// false
+
+</script>
+</body>
+</html>

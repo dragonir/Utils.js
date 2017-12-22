@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>常用工具函数示例</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="./browser.min.js"></script>
+	<script type="text/javascript" src="./Util.js"></script>
+</head>
+<body>
+<div id="app1" class="test"></div>
+<script type="text/javascript">
+	
+	// hasClass
+	var app1 = document.getElementById("app1");
+	console.log(Util.hasClass(app1, "test"));
+	//  ["test", "", "", index: 0, input: "test"]
+	// console.log(Util.hasClass(app1, "foo"));
+	// false
+
+
+	/*// addClass
+	Util.addClass(app1, "foo");
+	console.log(Util.hasClass(app1, "foo"));*/
+</script>
+</body>
+</html>

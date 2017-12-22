@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>其他实用函数</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="./browser.min.js"></script>
+	<script type="text/javascript" src="./Util.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	
+	// coalesce
+	console.log(Util.coalesce(null, undefined, "", NaN, "Waldo"));
+	// ""
+
+
+	// coalesceFactory
+	console.log(Util.coalesceFactory(undefined, null, NaN, "", "Waldo"));
+	// "Waldo"
+
+
+	// extendHex
+	console.log(Util.extendHex("#03f"));
+	// #0033ff
+	console.log(Util.extendHex("05a"));
+	// #0055aa
+	console.log(Util.extendHex("#03c03c"));
+	// #03c03c
+
+
+	// gettype
+	console.log(Util.gettype(new Set([1,2,3])));
+	// set
+
+
+	// hexToRgb
+	console.log(Util.hexToRGB("#27ae60"));
+	// rgb(39, 174, 96)
+	console.log(Util.hexToRGB("acd"));
+	// rgb(170, 204, 221)
+
+
+	// RGBToHex
+	console.log(Util.RGBToHex((255, 165, 1)));
+
+
+	// timeTaken
+	Util.timeTaken(() => Math.pow(2, 10));
+	// timeTaken: 0.1181640625ms
+
+
+	// toOridinalSuffix
+	console.log(Util.toOridinalSuffix("123"));
+	// 123rd
+	console.log(Util.toOridinalSuffix("1"));
+	console.log(Util.toOridinalSuffix("2"));
+	console.log(Util.toOridinalSuffix("3"));
+	console.log(Util.toOridinalSuffix("4"));
+	console.log(Util.toOridinalSuffix("12"));
+	// 1st
+	// 2nd
+	// 3rd
+	// 4th
+	// 12nd
+
+
+	// UUIDGenerator
+	console.log(Util.UUIDGenerator());
+	// 227bbb3c-25ae-46cc-84e9-bfcf097e306f
+
+
+	// validateEmail
+	console.log(Util.validateEmail("xx@xx.com"));// true
+	console.log(Util.validateEmail("xxx"));		// false
+</script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>常用工具函数示例</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="browser.min.js"></script>
+	<script type="text/javascript" src="./Util.js"></script>
+</head>
+<body>
+<div id="app" class="test"></div>
+<script type="text/javascript">
+	
+	// Array
+	// arrayMax
+	console.log(Util.arrayMax([1,3,4,5]));		// 5
+
+
+	// arrayMin
+	console.log(Util.arrayMin([1,3,4,5]));		// 1
+
+
+	// chunk
+	console.log(Util.chunk([1,2,3,4,5], 2));
+	//  [[1,2],[3,4],[5]]
+
+
+	// compact
+	console.log(Util.compact([0, 1, false, 2, '', 3, 'a', 'e'*23, NaN, 's', 34]));
+	// [1, 2, 3, "a", "s", 34]
+
+
+	// countOccurrences
+	console.log(Util.countOccurrences([1,1,2,1,2,3], 1));
+	// 3
+
+
+	// deepFlatten
+	// console.log(Util.deepFlatten([1,[2],[[3],4],5]));
+
+
+	// difference
+	console.log(Util.difference([1, 2, 3], [1, 2, 4]));
+	// [3]
+
+
+	// distinctValuesOfArray
+	console.log(Util.distinctValuesOfArray([1,2,2,3,4,4,5]));
+	// [1, 2, 3, 4, 5]
+
+
+	// dropElements
+	console.log(Util.dropElements([1, 2, 3, 4], n => n >= 3));
+	// [3, 4]
+
+
+	// everyNth
+	console.log(Util.everyNth([1,2,3,4,5,6], 2));
+	//  [1, 3, 5]
+
+
+	// filterNonUnique
+	console.log(Util.filterNonUnique([1,2,2,3,4,4,5]));
+	// [1, 3, 5]
+
+
+	// flatten
+	console.log(Util.flatten([1,[2],3,4]));
+	// [1, 2, 3, 4]
+
+
+	// flattenDepth
+	// console.log(Util.flattenDepth(([1,[2],[[[3],4],5]], 2));
+
+
+	// groupBy
+	// console.log(Util.groupBy(([6.1, 4.2, 6.3], Math.floor));
+
+
+	// head
+	console.log(Util.head([1,2,3]));
+	// 1
+
+
+	// initial
+	console.log(Util.initial([1,2,3]));
+	// [1, 2]
+
+
+	// initializeArrayWithRange
+	console.log(Util.initializeArrayWithRange(5));
+	// [0, 1, 2, 3, 4]
+
+
+	// initializeArrayWithValues
+	console.log(Util.initializeArrayWithValues(5, 2));
+	// [2, 2, 2, 2, 2]
+
+
+	// intersection
+	console.log(Util.intersection([1, 2, 3], [4, 3, 2]));
+	// [2, 3]
+
+
+	// last
+	console.log(Util.last([1,2,3]));
+	// 3
+
+
+	// mapObject
+	var aquareIt = arr => Util.mapObject(arr, a => a*a);
+	console.log(aquareIt([1,2,3]));
+	// {1: 1, 2: 4, 3: 9}
+
+
+	// nthElement
+	console.log(Util.nthElement(["a", "b", "c"]));
+	// a
+
+
+	// pick
+	console.log(Util.pick({"a": 1, "b": 2, "c": 3}, ["a", "c"]));
+	// {a: 1, c: 3}
+
+
+	// pull
+	let myArray = ["a", "b", "c", "a", "b", "c"];
+	Util.pull(myArray, "a", "c");
+	console.log(myArray);		
+	//  ["b", "b"]
+
+
+	// remove
+	console.log(Util.remove([1, 2, 3, 4], n => n%2 == 0));
+	// [2, 4]
+
+
+	// sample
+	console.log(Util.sample([3, 7, 9, 11]));
+	// 7
+
+
+	// shuffle
+	console.log(Util.shuffle([1,2,3,4,5]));
+	//  [3, 2, 5, 1, 4]
+
+
+	// similarity
+	console.log(Util.similarity([1,2,3], [2,3,4]));
+	// [2, 3]
+
+
+	// symmetricDifference
+	console.log(Util.symmetricDifference([1,2,3], [1,2,4]));
+	// [3, 4]
+
+
+	// tail
+	console.log(Util.tail([1,2,3]));
+	// [2, 3]
+
+
+	// take
+	console.log(Util.take([1,2,3], 5));		// [1, 2, 3]
+	console.log(Util.take([1,2,3], 2));		// [1, 2]
+	console.log(Util.take([1,2,3], 0));		// []
+
+
+	// takeRight
+	console.log(Util.takeRight([1,2,3],2));	// [2, 3]
+	console.log(Util.takeRight([1,2,3]));	// [3]
+
+
+	// union
+	console.log(Util.union([1,2,3], [2,3,4]));
+	// [1, 2, 3, 4]
+
+
+	// without
+	console.log(Util.without([2, 1, 2, 3], 1, 2));	
+	// [3]
+
+
+	// zip
+	console.log(Util.zip(["a", "b"], [1, 2], [true, false]));
+	// [['a', 1, true], ['b', 2, false]]
+	console.log(Util.zip(["a"], [1, 2], [true, false]));
+	// [['a', 1, true], [undefined, 2, false]]
+
+</script>
+</body>
+</html>

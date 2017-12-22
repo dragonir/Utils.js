@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>常用工具函数示例-浏览器类</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="./browser.min.js"></script>
+	<script type="text/javascript" src="./Util.js"></script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+			height: 3000px;
+		}
+		#div1{
+			width: 10px;
+			height: 10px;
+			position: absolute;
+			top: -1px;
+			left: 0;
+			bottom: 9px;
+			right: 10px;
+			background-color: #fffc00;
+		}
+	</style>
+</head>
+<body>
+<div id="div1"></div>
+<button id="btn1">重定向</button>
+<script type="text/javascript">
+	
+	// bottomVisible
+	console.log(Util.bottomVisible());
+	// true
+
+	// currentURL
+	console.log(Util.currentURL());
+	// file:/...
+
+	// elementIsVisibleInViewport
+	let div1 = document.getElementById("div1");
+	console.log(Util.elementIsVisibleInViewport(div1));
+	// false 是否全部可见
+	console.log(Util.elementIsVisibleInViewport(div1, true));
+	// true 是否部分可见
+
+	// getScrollPosition
+	console.log(Util.getScrollPosition());
+	// {x: 0, y: 0}
+
+	// getURLParameters
+	let url = "http://url.com/page?firstName=Well&lastName=Smith";
+	console.log(Util.getURLParameters(url));
+	// {firstName: "Well", lastName: "Smith"}
+
+	// redirect
+	// var url2 = "https://wwww.baidu.com";
+	// var btn1 = document.getElementById("btn1");
+	// btn1.addEventListener("onclick", Util.redirect(url2), false);
+
+	// scrollToTop
+	Util.scrollToTop();
+</script>
+</body>
+</html>

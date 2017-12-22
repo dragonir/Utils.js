@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>媒体类</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="./browser.min.js"></script>
+	<script type="text/javascript" src="./Util.js"></script>
+</head>
+<body>
+<button id="btn1">播放</button>
+<script type="text/javascript">
+	
+	// speechSynthesis
+	var btn1 = document.getElementById("btn1");
+	btn1.addEventListener("click", function(){
+		Util.speechSynthesis("Hello World");
+		Util.speechSynthesis("你好");
+		console.log("clicked!");
+	}, false);
+
+</script>
+</body>
+</html>

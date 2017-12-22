@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>字符串</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="./browser.min.js"></script>
+	<script type="text/javascript" src="./Util.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	
+	// anagrams
+	console.log(Util.anagrams("abc"));
+	// ["abc", "acb", "bac", "bca", "cab", "cba"]
+	console.log(Util.anagrams("1234"));
+	// ["1234", "1243", "1324", "1342", "1423", "1432", "2134", "2143", "2314", "2341", "2413", "2431", "3124", "3142", "3214", "3241", "3412", "3421", "4123", "4132", "4213", "4231", "4312", "4321"]
+
+
+	// capitalize
+	console.log(Util.capitalize("dragonir"));
+	// Dragonir
+	console.log(Util.capitalize("myName"));
+	// MyName
+
+
+	// capitalizeEveryWord
+	console.log(Util.capitalizeEveryWord("hello world"));
+	// Hello World
+	console.log(Util.capitalizeEveryWord("nice to meet you!"));
+	// Nice To Meet You!
+
+
+	// escapeRegExp
+	console.log(Util.escapeRegExp("(test)"));
+	// \(test\)
+
+
+	// fromCamelCase
+	console.log(Util.fromCamelCase("someDatabaseFieldName", " "));
+	// some database field name
+	console.log(Util.fromCamelCase("someLabelThatNeedsToBeCamelized", " "));
+	// some label that needs to be camelized
+
+
+	// reverseString
+	console.log(Util.reverseString("dragonir"));
+	// rinogard
+
+
+	// sortCharactersInString
+	console.log(Util.sortCharactersInString("cabbage"));
+	// aabbceg
+
+
+	// toCamelCase
+	console.log(Util.toCamelCase("some_database_field_name"));
+	// someDatabaseFieldName
+	console.log(Util.toCamelCase("Some label that needs to be camelized"));
+	// someLabelThatNeedsToBeCamelized
+	console.log(Util.toCamelCase("some-javascript-property"));
+	// someJavascriptProperty
+	console.log(Util.toCamelCase("some-mixed_string with spaces_underscores-and-hyphens"));
+	// someMixedStringWithSpacesUnderscoresAndHyphens
+
+
+	// truncateString
+	console.log(Util.truncateString("boommerang", 7));
+	// boom...
+	console.log(Util.truncateString("with", 4));
+	// with
+</script>
+</body>
+</html>

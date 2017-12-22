@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>对象类</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="./browser.min.js"></script>
+	<script type="text/javascript" src="./Util.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	
+	// cleanObj
+	const testObj = {a: 1, b: 2, children: {a: 1, b: 2}};
+	Util.cleanObj(testObj, ["a"], "children");
+	console.log(testObj);
+	//  { a: 1, children : { a: 1}}
+
+
+	// objectFromPairs
+	console.log(Util.objectFromPairs([["a",1], ["b",2]]));
+	// {a: 1, b: 2}
+
+
+	// objectToPairs
+	console.log(Util.objectToPairs({a: 1, b: 2}));
+	// [['a',1],['b',2]]
+
+
+	// shallowClone
+	const a = {x: true, y: 1};
+	const b = Util.shallowClone(a);
+	console.log(b);				// {x: true, y: 1}
+	console.log(a === b);		// false
+
+
+	// truthCheckCollection
+	console.log(
+		Util.truthCheckCollection(
+			[
+			{"user": "Wang", "gender": "male"}, 
+			{"user": "Alice", "gender": "female"}
+			], 
+		"gender")
+	);
+	// true
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>类型检测</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="./browser.min.js"></script>
+	<script type="text/javascript" src="./Util.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	
+	// isNumber
+	console.log(Util.isNumber(10));			// true
+	console.log(Util.isNumber(NaN));		// false
+
+
+	// isArray
+	var arr = [];
+	var obj = {};
+	console.log(Util.isArray(arr));			// true
+	console.log(Util.isArray(obj));			// false
+
+
+	// isFunction
+	function func(){}
+	console.log(Util.isFunction(func));		// true
+	console.log(Util.isFunction(arr));		// false
+
+
+	// isRegExp
+	var reg = /d/;
+	var reg1 = new RegExp();
+	console.log(Util.isRegExp(reg));		// true
+	console.log(Util.isRegExp(reg1));		// true
+
+
+	// isString
+	var str = "Hello World";
+	console.log(Util.isString(str));		// true
+	console.log(Util.isString(obj));		// false
+
+
+	// isBoolean
+	console.log(Util.isBoolean(true));		// true
+	console.log(Util.isBoolean(false));		// true
+	console.log(Util.isBoolean(NaN));		// false
+
+
+	// isSymbol
+	let s = Symbol();
+	console.log(Util.isSymbol(s));			// true
+	console.log(Util.isSymbol(obj));		// false
+
+</script>
+</body>
+</html>

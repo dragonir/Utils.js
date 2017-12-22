@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数学类函数示例</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="./browser.min.js"></script>
+	<script type="text/javascript" src="./Util.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	
+	// generateRandom
+	// 产生2到10间的随机数
+	console.log(Util.generateRandom(2, 10));
+	// 3
+
+
+	// arrayAverage
+	console.log(Util.arrayAverage([1,2,3,4,5]));// 3
+
+
+	// arraySum
+	console.log(Util.arraySum([1,2,3,4,5]));	// 15
+
+
+	// collatz
+	console.log(Util.collatz(8));				// 4
+	console.log(Util.collatz(5));				// 16
+
+
+	// digitize
+	console.log(Util.digitize(12345));
+	// [1, 2, 3, 4, 5]
+
+
+	// distance
+	console.log(Util.distance(1, 2, 2, 3));
+	// 1.4142135623730951
+
+
+	// fibonacci
+	console.log(Util.fibonacci(7));
+	// [0, 1, 1, 2, 3, 5, 8]
+
+
+	// gcd
+	console.log(Util.gcd(8, 36));				// 4
+	console.log(Util.gcd(5, 15));				// 5
+
+
+	// hammingDistance
+	console.log(Util.hammingDistance(2, 3));	// 1
+
+
+	// isDivisible
+	console.log(Util.isDivisible(6, 3));		// true
+	console.log(Util.isDivisible(6, 5));		// false
+
+
+	// isEven
+	console.log(Util.isEven(5));				// false
+	console.log(Util.isEven(6));				// true
+
+
+	// lcm
+	console.log(Util.lcm(5, 15));				// 15
+	console.log(Util.lcm(12, 7));				// 84
+
+
+	// median
+	console.log(Util.median([5, 6, 50, 1, -5]));// 5
+	console.log(Util.median([0, 10, -2, 7]));	// 3.5
+
+
+	// palindrome
+	console.log(Util.palindrome("tacocat"));	// true
+	console.log(Util.palindrome("catat"));		// false
+
+
+	// percentile
+	console.log(Util.percentile([1,2,3,4,5,6,7,8,9,10], 6));
+	// 55
+
+
+	// powerset
+	console.log(Util.powerset([1,2]));
+	// [[], [1], [2], [2,1]]
+
+
+	// randomIntegerInRange
+	console.log(Util.randomIntegerInRange(1, 10));
+	// 3
+
+
+	// randomNumberInRange
+	console.log(Util.randomNumberInRange(1, 10));
+	// 9.513243188565486
+
+
+	// round
+	console.log(Util.round(1.005, 2));
+	// 1.01
+	console.log(Util.round(1.005, 1));
+	// 1
+	console.log(Util.round(1.005));
+	// 1
+
+
+	// standardDeviation
+	// console.log(Util.standardDeviation([10, 2, 38, 23, 38, 23, 21]));
+
+</script>
+</body>
+</html>

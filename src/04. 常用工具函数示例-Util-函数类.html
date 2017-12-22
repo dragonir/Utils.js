@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>函数类</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="./browser.min.js"></script>
+	<script type="text/javascript" src="./Util.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	
+	// chainAsync
+	Util.chainAsync([
+		next => {console.log("0 second"); setTimeout(next, 1000);},
+		next => {console.log("1 second"); setTimeout(next, 1000);},
+		next => {console.log("2 second"); }
+	]);
+	// 0 second
+	// 1 second
+	// 2 second
+
+
+	// compose
+	const add5 = x => x + 5;
+	const multiply = (x, y) => x * y;
+	const multiplyAndAdd5 = Util.compose(add5, multiply);
+	console.log(multiplyAndAdd5(5, 2));
+	// 15
+
+
+	// curry
+	function add(num1, num2){
+		return num1 + num2;
+	}
+	var curriedAdd = Util.curry(add, 5);
+	console.log(curriedAdd(3));						// 8
+	var curriedAdd2 = Util.curry(add, 5, 12);
+	console.log(curriedAdd2());						// 17
+
+
+	// functionName
+	Util.functionName(Math.max);
+	//  max (logged in debug channel of console)
+
+
+	// pipefunctions
+	const _multiplyAndAdd5 = Util.pipeFunctions(multiply, add5);
+	console.log(_multiplyAndAdd5(5, 2));			// 15
+
+
+	// promisify
+	const delay = Util.promisify((d, cb) => setTimeout(cb, d));
+	delay(2000).then(() => console.log("Hi!"));		// Hi!
+
+
+	// runPromiseInSeries
+	const delay2 = (d) => new Promise(r => setTimeout(r, d));
+	Util.runPromisesInSeries([() => delay(1000), () => delay2(2000)]);
+	// executes each promise sequentially, taking a total of 3 seconds to complete
+
+
+	// sleep
+	async function sleepyWorks(){
+		console.log("I'm going to sleep for 1 second.");
+		await Util.sleep(1000);
+		console.log("I woke up after 1 second.");
+	};
+	sleepyWorks();
+	// I'm going to sleep for 1 second.
+	// I woke up after 1 second.
+</script>
+</body>
+</html>
