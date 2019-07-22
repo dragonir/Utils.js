@@ -302,7 +302,7 @@ const difference = (a, b) => { const s = new Set(b); return a.filter(x => !s.has
 
 返回数组的所有不同值。
 
-使用 ES6 `Set`和`...rest`运算符放弃所有重复的值。
+使用 ES6 `Set`和`...rest`运算符丢弃所有重复的值。
 
 ```js
 const distinctValuesOfArray = arr => [...new Set(arr)];
